@@ -1,5 +1,6 @@
 package com.example.boutique.services;
 
+import com.example.boutique.entities.Category;
 import com.example.boutique.entities.Product;
 import com.example.boutique.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,10 @@ public class ProductService {
     public Product getProductById(Long productId) {
         Optional<Product> optionalProduct = productRepository.findById(productId);
         return optionalProduct.get();
+    }
+    public List<Product> getProductByCategory(Category category) {
+       return  productRepository.getProductsByCategory(category);
+
     }
     public Product updateProduct(Long id,Product product) {
         Product existingProduct= productRepository.findById(product.getId()).get();

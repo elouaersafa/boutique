@@ -22,7 +22,10 @@ public class CategoryService {
     public Category createCategory(Category category) {
         return categoryRepository.save(category);
     }
+    public Category getCategoryByName(String categoryName) {
+       return categoryRepository.getCategoriesByName(categoryName);
 
+    }
 
     public Category getCategoryById(Long categoryId) {
         Optional<Category> optionalCategory = categoryRepository.findById(categoryId);

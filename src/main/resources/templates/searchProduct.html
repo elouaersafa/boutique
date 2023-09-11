@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Rechercher des Produits</title>
+</head>
+<body>
+<h1>Rechercher des Produits</h1>
+<form th:action="@{/products/search}" th:object="${products}" method="post">
+  <div>
+    <label>Nom du Produit:</label>
+    <input type="text" th:field="*{name}" />
+  </div>
+  <div>
+    <label>Catégorie:</label>
+    <input type="text" th:field="*{category}" />
+  </div>
+  <!-- Ajoutez d'autres champs de recherche selon vos besoins -->
+  <button type="submit">Rechercher</button>
+</form>
+
+<!-- Afficher les résultats de la recherche ici, par exemple sous forme de tableau -->
+<table>
+  <!-- Affichez les résultats ici -->
+</table>
+</body>
+</html>

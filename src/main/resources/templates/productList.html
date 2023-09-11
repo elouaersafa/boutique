@@ -9,21 +9,39 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
 <body>
+<a th:href="@{/products/new}" class="btn btn-primary btn-sm mb-3" >Add Product</a>
+<div class="container">
+    <div class="row">
+        <!-- Créez une carte Bootstrap pour chaque élément -->
+
 <div th:each="product:${productList}">
 
-<div class="card">
+    <div class="d-flex justify-content-between">
+<div class="card m-2">
     <div class="card-body">
         <h5 class="card-title" th:text="${product.name}"></h5>
         <p class="card-text" th:text="${product.description}"></p>
         <p class="card-price" th:text="${product.price} + ' €'"></p>
-        <a href="#" class="btn btn-primary">Acheter</a>
 
             <a th:href="@{products/showFormForUpdate/{id}(id=${product.id})}"><button class="btn btn-info">Modifier</button></a>
             <a th:href="@{products/{id}(id=${product.id})}"><button class="btn btn-danger">Supprimer</button></a>
 
             </div>
     </div>
+    </div>
+    </div>
 </div>
 
+<div class="pagination">
+    <!-- Boutons de pagination (Précédent et Suivant) -->
+    <button class="prev-btn">Précédent</button>
+    <button class="next-btn">Suivant</button>
+</div>
+</div>
+<a th:href = "@{/}"> Back to Home</a>
+<!-- Incluez les fichiers JavaScript de Bootstrap à la fin du corps -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
