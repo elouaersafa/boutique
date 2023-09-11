@@ -1,6 +1,7 @@
 package com.example.boutique.entities;
 
-
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -19,6 +20,7 @@ public class Product {
 
     @ManyToOne
     @JoinColumn(name = "category_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
     private Category category;
 
