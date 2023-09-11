@@ -10,3 +10,6 @@ background-image: url('assets/img.png');
 background-size: cover;
 background-repeat: no-repeat;
 }
+.site-title {
+    justify-items: center;
+}
