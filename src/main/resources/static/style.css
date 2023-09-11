@@ -8,15 +8,20 @@
 
 .btn {
     margin-right: 10px;
+
 }
+
 .card {
 
     margin: 0;
 
     border: 1px solid #ccc;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
 
+}
+.product{
+    background-color: lightpink;
+}
 
 /* Styles pour la pagination */
 .pagination {
@@ -87,4 +92,67 @@
     color: #333; /* Couleur du texte */
     text-align: center; /* Centrer le texte horizontalement */
     margin: 20px 0; /* Marge supérieure et inférieure */
+}
+.add {
+    background-image: url('assets/img.png');
+}
+.cat {
+    background-image: url('assets/img.png');
+}
+
+/* Style du conteneur du formulaire */
+.form-container {
+    max-width: 400px; /* Définissez la largeur maximale du formulaire */
+    margin: 0 auto; /* Centrez le formulaire horizontalement */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Style pour les étiquettes */
+label {
+    display: block; /* Affichez les étiquettes en bloc (une en dessous de l'autre) */
+    margin-bottom: 10px; /* Espace entre les étiquettes */
+}
+
+/* Style pour les champs de saisie */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%; /* Largeur à 100% pour remplir le conteneur */
+    padding: 10px; /* Espace interne autour du champ de saisie */
+    margin-bottom: 15px; /* Espace entre les champs de saisie */
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Style pour le bouton Soumettre */
+input[type="submit"] {
+    background-color: #007bff; /* Couleur de fond du bouton */
+    color: #fff; /* Couleur du texte du bouton */
+    padding: 10px 20px; /* Espace interne du bouton */
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Style pour le bouton Réinitialiser (facultatif) */
+input[type="reset"] {
+    background-color: #ccc;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Style pour le bouton Soumettre au survol */
+input[type="submit"]:hover {
+    background-color: #0056b3; /* Couleur de fond du bouton au survol */
+}
+
+/* Style pour le bouton Réinitialiser au survol (facultatif) */
+input[type="reset"]:hover {
+    background-color: #999;
 }
