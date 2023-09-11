@@ -40,7 +40,9 @@
 <form th:action="@{addCategory}" th:object="${saveCategory}" method="POST">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" th:field="*{saveCategory.name}" required>
-
+    <select th:field="*{saveCategory.product}" class="form-control">
+        <option th:each="category: ${productCategories}" th:value="${product.id}" th:text="${product.name}"></option>
+    </select>
     <button type="submit">Add Category</button>
 </form>
 

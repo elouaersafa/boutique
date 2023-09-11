@@ -18,6 +18,7 @@ public class ProductControllers {
     ProductService productService;
     @Autowired
     CategoryService categoryService;
+
     @GetMapping("/")
     public String home(Model model) {
         List<Product> products = productService.getAllProducts();
@@ -35,17 +36,20 @@ public class ProductControllers {
         model.addAttribute("productList", productService.getAllProducts());
         return "productList";
     }
+
     @PostMapping("/products/news")
     public String saveProduct(@ModelAttribute("product") Product product) {
         productService.createProduct(product);
-        return  "redirect:/products";
+        return "redirect:/products";
     }
+
     @GetMapping("/products/new")
     public String addNewProduct(Model model) {
         Product product = new Product();
         model.addAttribute("product", product);
         return "newProduct";
     }
+
     @GetMapping("products/showFormForUpdate/{id}")
     public String showEditProductForm(@PathVariable Long id, Model model) {
         Product product = productService.getProductById(id);
@@ -89,5 +93,4 @@ public class ProductControllers {
         return "searchProduct";
     }
 
-
-        }
+}

@@ -4,24 +4,38 @@
 <head>
   <meta charset="UTF-8">
   <title>Add Product</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
 </head>
 <body>
 <h1>Add Product</h1>
+<div class="container mt-5">
+<div class="card inscription">
+  <div class="card-body">
 <form action="#" th:action="@{/products/news}" th:object="${product}" method="POST">
+  <div class="form-group">
   <label for="name">Name:</label>
-  <input type="text" id="name" name="name" th:field="*{name}" required>
-
-  <br>
+  <input type="text" id="name" class="form-control" name="name" th:field="*{name}" required>
+</div>
+  <div class="row">
+    <div class="col">
+  <div class="form-group">
   <label for="price">Price:</label>
-  <input type="text" id="price" name="price" th:field="*{price}" required>
-  <br>
+  <input type="text"class="form-control"  id="price" name="price" th:field="*{price}" required>
+  </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+  <div class="form-group">
   <label for="description">Description:</label>
-  <input type="text" id="description" name="description" th:field="*{description}" required>
-  <br>
-
-  <button type="submit">Add Product</button>
+  <input type="text" id="description" class="form-control" name="description" th:field="*{description}" required>
+  </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Add Product</button>
 </form>
-
-
+  </div>
+  </div>
+</div>
 </body>
 </html>
