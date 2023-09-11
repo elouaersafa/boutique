@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Product</title>
+</head>
+<body>
+
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title" th:text="${product.name}"></h5>
+    <p class="card-text" th:text="${product.description}"></p>
+    <p class="card-text">Price: <span th:text="${product.price}"></span></p>
+    <a th:href="@{/categories/{categoryId}/products/{productId}(categoryId=${category.id},productId=${product.id})}" class="btn btn-primary">Details</a>
+  </div>
+</div>
+</body>
+</html>

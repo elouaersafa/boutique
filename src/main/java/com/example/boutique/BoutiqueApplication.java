@@ -34,7 +34,8 @@ public class BoutiqueApplication implements CommandLineRunner {
 
 		Category category1 = new Category();
 		category1.setName("pull");
-		//category1.setProducts(products);
+	
+		category1.setProducts(category1.getProducts());
 		categoryRepository.save(category1);
 
 

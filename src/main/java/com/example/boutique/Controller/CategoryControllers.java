@@ -26,15 +26,15 @@ public class CategoryControllers {
         model.addAttribute("saveCategory", category);
         return "categoryList";
     }
+
     @PostMapping("/addCategory")
     public String saveCategory(@ModelAttribute("saveCategory") Category category) {
         categoryService.createCategory(category);
-        return  "redirect:/categories";
+        return "redirect:/categories";
     }
 
 
-
-   @GetMapping("/categories/showFormForUpdate/{id}")
+    @GetMapping("/categories/showFormForUpdate/{id}")
     public String showEditCategoryForm(@PathVariable Long id, Model model) {
         Category category = categoryService.getCategoryById(id);
         if (category == null) {
@@ -53,17 +53,30 @@ public class CategoryControllers {
         }
         return "redirect:/categories";
     }
-   @GetMapping("/showFormForUpdate/{id}")
+
+    @GetMapping("/showFormForUpdate/{id}")
     public String updateForm(@PathVariable(value = "id") long id, Model model) {
-       Category category = categoryService.getCategoryById(id);
+        Category category = categoryService.getCategoryById(id);
         model.addAttribute("category", category);
         return "updatedCategory";
     }
 
-   @GetMapping("/categories/{id}")
+    @GetMapping("/categories/{id}")
     public String deleteThroughId(@PathVariable(value = "id") long id) {
-       categoryService.deleteCategory(id);
+        categoryService.deleteCategory(id);
         return "redirect:/categories";
 
+    }
+
+    @GetMapping("/categories/{categoryId}/products/{productId}")
+    public String getProductDetails(@PathVariable Long categoryId, @PathVariable Long productId, Model model) {
+        // Récupérez le produit spécifique à partir de votre service
+        Product product = productService.getProductById(productId);
+
+        // Ajoutez le produit au modèle pour l'afficher dans la vue Thymeleaf
+        model.addAttribute("product", product);
+
+        // Renvoyez la vue des détails du produit
+        return "productDetails";
     }
 }

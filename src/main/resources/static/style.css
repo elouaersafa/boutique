@@ -81,3 +81,10 @@
     background-color: #2980b9; /* Couleur du bouton au survol */
 }
 
+.site-title {
+    font-size: 36px; /* Taille de la police */
+    font-weight: bold; /* Gras */
+    color: #333; /* Couleur du texte */
+    text-align: center; /* Centrer le texte horizontalement */
+    margin: 20px 0; /* Marge supérieure et inférieure */
+}
